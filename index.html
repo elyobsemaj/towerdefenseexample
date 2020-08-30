@@ -8,8 +8,8 @@
     <script>var config = {
     type: Phaser.AUTO,
     parent: 'content',
-    width: 640,
-    height: 512,   
+    width: 960,
+    height: 1024,   
     scene: {
         key: 'main',
         preload: preload,
@@ -52,9 +52,9 @@ function create() {
     
     // the path for our enemies
     // parameters are the start x and y of our path
-    path = this.add.path(25, 0);
-    path.lineTo(25, 256);
-    path.lineTo(640, 256);
+    path = this.add.path(25, 1024);
+    path.lineTo(25, 512);
+    path.lineTo(960, 512);
     
     graphics.lineStyle(3, 0xffffff, 1);
     // visualize the path
