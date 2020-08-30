@@ -27,18 +27,34 @@ function preload() {
     this.load.atlas('sprites', 'assets/spritesheet.png', 'assets/spritesheet.json');    
     this.load.image('bullet', 'assets/bullet.png');
 }
+var Enemy = new Phaser.Class({
  
+        Extends: Phaser.GameObjects.Image,
+ 
+        initialize:
+ 
+        function Enemy (scene)
+        {
+            Phaser.GameObjects.Image.call(this, scene, 0, 0, 'sprites', 'enemy');
+ 
+        },
+        update: function (time, delta)
+        {
+            
+        }
+ 
+}); 
+        
 function create() {
-        // this graphics element is only for visualization, 
+    // this graphics element is only for visualization, 
     // its not related to our path
     var graphics = this.add.graphics();    
     
     // the path for our enemies
     // parameters are the start x and y of our path
-    path = this.add.path(96, -32);
-    path.lineTo(96, 164);
-    path.lineTo(480, 164);
-    path.lineTo(480, 544);
+    path = this.add.path(25, 0);
+    path.lineTo(25, 256);
+    path.lineTo(640, 256);
     
     graphics.lineStyle(3, 0xffffff, 1);
     // visualize the path
